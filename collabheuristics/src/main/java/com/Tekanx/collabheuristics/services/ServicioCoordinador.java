@@ -1,11 +1,18 @@
 package com.Tekanx.collabheuristics.services;
-
 /**
  * @author Tekanx
  * @version 0.1
- * @since 06/03/2025
+ * @since 07/03/2025
  */
 
-public class ServicioCoordinador {
-    
+import java.util.List;
+import com.Tekanx.collabheuristics.models.Coordinador;
+
+public interface ServicioCoordinador {
+    List<Coordinador> getAllCoordinadores();
+    Coordinador getCoordinador(Long id_coordinador);
+    Coordinador addCoordinador(Coordinador coordinador);
+    Coordinador updateCoordinador(Coordinador coordinador);
+    String deleteCoordinador(Coordinador coordinador);
+
 }
