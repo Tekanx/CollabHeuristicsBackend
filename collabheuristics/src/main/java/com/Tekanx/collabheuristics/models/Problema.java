@@ -6,9 +6,9 @@ package com.Tekanx.collabheuristics.models;
  */
 
 public class Problema {
-    private String id_problema;
-    private String fk_evaluacion;
-    private String fk_evaluador;
+    private Long id_problema;
+    private Long fk_evaluacion;
+    private Long fk_evaluador;
     private String nombre_problema;
     private String descripcion_problema;
     private String[] heuristica_incumplida;

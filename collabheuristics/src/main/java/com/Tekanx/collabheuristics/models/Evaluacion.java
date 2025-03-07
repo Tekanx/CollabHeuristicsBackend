@@ -8,11 +8,11 @@ import java.sql.Date;
 
 
 public class Evaluacion {
-    private String id_evaluacion;
+    private Long id_evaluacion;
     private String nombre_evaluacion;
     private String descripcion;
     private String principio;
     private Date fecha_inicio;
     private Date fecha_termino;
-    private String fk_coordinador;  
+    private Long fk_coordinador;  
 }

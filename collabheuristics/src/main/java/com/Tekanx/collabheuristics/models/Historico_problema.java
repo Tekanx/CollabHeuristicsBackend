@@ -8,9 +8,9 @@ import java.sql.Date;
  */
 
 public class Historico_problema {
-   private String id_historico;
-   private String fk_evaluador;
-   private String fk_coordinador;
+   private Long id_historico;
+   private Long fk_evaluador;
+   private Long fk_coordinador;
    private Date fecha_cambio;
    private Date detalle_cambio; 
 }

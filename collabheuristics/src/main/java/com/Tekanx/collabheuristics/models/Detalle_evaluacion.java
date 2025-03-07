@@ -6,8 +6,8 @@ package com.Tekanx.collabheuristics.models;
  */
 
 public class Detalle_evaluacion {
-   private String id_detalle;
-   private String fk_evaluador;
-   private String fk_evaluacion;
+   private Long id_detalle;
+   private Long fk_evaluador;
+   private Long fk_evaluacion;
    private Integer paso_actual;
 }

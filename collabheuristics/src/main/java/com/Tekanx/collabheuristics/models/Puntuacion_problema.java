@@ -6,9 +6,9 @@ package com.Tekanx.collabheuristics.models;
  */
 
 public class Puntuacion_problema {
-   private String id_puntuacion;
-   private String fk_evaluador;
-   private String fk_problema;
+   private Long id_puntuacion;
+   private Long fk_evaluador;
+   private Long fk_problema;
    private Integer[] probabilidad;
    private Integer[] severidad;
    private Integer[] criticidad; 

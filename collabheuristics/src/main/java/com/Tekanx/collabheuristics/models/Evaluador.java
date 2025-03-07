@@ -5,7 +5,7 @@ package com.Tekanx.collabheuristics.models;/**
  */
 
 public class Evaluador {
-    private String id_coordinador;
+    private Long id_coordinador;
     private String nombre_usuario;
     private String nombre_real;
     private String apellido_coordinador;
