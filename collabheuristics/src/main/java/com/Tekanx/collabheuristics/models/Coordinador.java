@@ -2,7 +2,7 @@ package com.Tekanx.collabheuristics.models;
 /**
  * @author Tekanx
  * @version 0.1
- * @since 06/03/2025
+ * @since 07/03/2025
 */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,7 +14,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.UuidGenerator;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 
@@ -27,15 +26,22 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 @JsonInclude(NON_DEFAULT)
 public class Coordinador {
     @Id
-    @UuidGenerator
     @Column(name = "id_coordinador", unique = true, updatable = false)
-    private String id_coordinador;
+    private Long id_coordinador;
+    @Column(name = "nombre_usuario")
     private String nombre_usuario;
+    @Column(name = "nombre_real")
     private String nombre_real;
+    @Column(name = "apellido_coordinador")
     private String apellido_coordinador;
-    private Integer contacto_numero;
+    @Column(name = "contacto_numero")
+    private String contacto_numero;
+    @Column(name = "contacto_correo")
     private String contacto_correo;
+    @Column(name = "genero")
     private Byte genero;
+    @Column(name = "url_avatar")
     private String url_avatar;
+    @Column(name = "contrasena")
     private String contrasena;
 }
