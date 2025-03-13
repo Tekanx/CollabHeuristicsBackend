@@ -8,13 +8,14 @@ import org.springframework.http.ResponseEntity;
 /**
  * @author Tekanx
  * @version 0.1
- * @since 07/03/2025
+ * @since 13/03/2025
  */
 
 
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Tekanx.collabheuristics.models.Coordinador;
+import com.Tekanx.collabheuristics.models.Evaluacion;
 import com.Tekanx.collabheuristics.services.ServicioCoordinador;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,8 +37,13 @@ public class ControladorCoordinador {
         return ResponseEntity.ok(servicioCoordinador.getAllCoordinadores());
     }
 
+    @GetMapping("/coordinadores/{id_coordinador}/evaluaciones")
+    public ResponseEntity<List<Evaluacion>> getAllEvaluacionesofCoordinador(@PathVariable("id_coordinador") Integer id_coordinador){
+        return ResponseEntity.ok(servicioCoordinador.getEvaluacionesOfCoordinador(id_coordinador));
+    }
+
     @GetMapping("/coordinadores/{id_coordinador}")
-    public ResponseEntity<Coordinador> getCoordinador(@PathVariable("id_coordinador") Long id_coordinador) {
+    public ResponseEntity<Coordinador> getCoordinador(@PathVariable("id_coordinador") Integer id_coordinador) {
         return ResponseEntity.ok(servicioCoordinador.getCoordinador(id_coordinador));
     }
     
@@ -47,13 +53,13 @@ public class ControladorCoordinador {
     }
     
     @PatchMapping("/coordinadores/{id_coordinador}")
-    public ResponseEntity<Coordinador> updateCoordinador(@RequestBody Coordinador coordinador, @PathVariable("id_coordinador") Long id_coordinador){
+    public ResponseEntity<Coordinador> updateCoordinador(@RequestBody Coordinador coordinador, @PathVariable("id_coordinador") Integer id_coordinador){
         Coordinador coordObj = servicioCoordinador.getCoordinador(id_coordinador);
         if (coordObj != null) {
             coordObj.setNombre_real(coordinador.getNombre_real());
-            coordObj.setApellido_coordinador(coordinador.getApellido_coordinador());
-            coordObj.setContacto_correo(coordinador.getContacto_correo());
-            coordObj.setContacto_numero(coordinador.getContacto_numero());
+            coordObj.setApellido_real(coordinador.getApellido_real());
+            coordObj.setCorreo(coordinador.getCorreo());
+            coordObj.setNumero(coordinador.getNumero());
             coordObj.setGenero(coordinador.getGenero());
             coordObj.setContrasena(coordinador.getContrasena());
         }
@@ -61,7 +67,7 @@ public class ControladorCoordinador {
     }
 
     @DeleteMapping("/coordinadores/{id_coordinador}")
-    public ResponseEntity<String> deleteCoordinador(@PathVariable("id_coordinador") Long id_coordinador){
+    public ResponseEntity<String> deleteCoordinador(@PathVariable("id_coordinador") Integer id_coordinador){
         Coordinador coordObj = servicioCoordinador.getCoordinador(id_coordinador);
         String deleteMsg = null;
         if (coordObj != null) {
