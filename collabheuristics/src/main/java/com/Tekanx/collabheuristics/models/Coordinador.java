@@ -2,7 +2,7 @@ package com.Tekanx.collabheuristics.models;
 /**
  * @author Tekanx
  * @version 0.1
- * @since 07/03/2025
+ * @since 13/03/2025
 */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -27,17 +27,17 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 public class Coordinador {
     @Id
     @Column(name = "id_coordinador", unique = true, updatable = false)
-    private Long id_coordinador;
+    private Integer id_coordinador;
     @Column(name = "nombre_usuario")
     private String nombre_usuario;
     @Column(name = "nombre_real")
     private String nombre_real;
-    @Column(name = "apellido_coordinador")
-    private String apellido_coordinador;
-    @Column(name = "contacto_numero")
-    private String contacto_numero;
-    @Column(name = "contacto_correo")
-    private String contacto_correo;
+    @Column(name = "apellido_real")
+    private String apellido_real;
+    @Column(name = "numero")
+    private Integer numero;
+    @Column(name = "correo")
+    private String correo;
     @Column(name = "genero")
     private Byte genero;
     @Column(name = "url_avatar")
