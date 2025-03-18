@@ -33,11 +33,11 @@ public class ControladorEvaluador {
 
     /* !- POST Mappings -! */
 
-    @PostMapping("/evaluadores"){
+    @PostMapping("/evaluadores")
         public ResponseEntity<Evaluador> createEvaluador(@RequestBody Evaluador evaluador){
             return ResponseEntity.ok(servicioEvaluador.addEvaluador(evaluador));
         }
-    }
+    
 
 
     /* !- UPDATE Mappings -! */
