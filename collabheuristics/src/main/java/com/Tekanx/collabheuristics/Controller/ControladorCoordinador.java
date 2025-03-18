@@ -32,26 +32,58 @@ public class ControladorCoordinador {
     @Autowired
     private ServicioCoordinador servicioCoordinador;
 
+    /* !- GET Mappings -! */
+
+    /**
+     * 
+     * @return
+     */
     @GetMapping("/coordinadores")
     public ResponseEntity <List<Coordinador>> getAllCoordinadores() {
         return ResponseEntity.ok(servicioCoordinador.getAllCoordinadores());
     }
 
+    /**
+     * 
+     * @param id_coordinador
+     * @return
+     */
     @GetMapping("/coordinadores/{id_coordinador}/evaluaciones")
     public ResponseEntity<List<Evaluacion>> getAllEvaluacionesofCoordinador(@PathVariable("id_coordinador") Integer id_coordinador){
         return ResponseEntity.ok(servicioCoordinador.getEvaluacionesOfCoordinador(id_coordinador));
     }
 
+    /**
+     * 
+     * @param id_coordinador
+     * @return
+     */
     @GetMapping("/coordinadores/{id_coordinador}")
     public ResponseEntity<Coordinador> getCoordinador(@PathVariable("id_coordinador") Integer id_coordinador) {
         return ResponseEntity.ok(servicioCoordinador.getCoordinador(id_coordinador));
     }
-    
+
+
+    /* !- POST Mappings -! */
+
+    /**
+     * 
+     * @param coordinador
+     * @return
+     */
     @PostMapping("/coordinadores")
     public ResponseEntity<Coordinador> createCoordinador(@RequestBody Coordinador coordinador) {
         return ResponseEntity.ok(servicioCoordinador.addCoordinador(coordinador));
     }
-    
+
+    /* !- UPDATE Mappings -! */
+
+    /**
+     * 
+     * @param coordinador
+     * @param id_coordinador
+     * @return
+     */
     @PatchMapping("/coordinadores/{id_coordinador}")
     public ResponseEntity<Coordinador> updateCoordinador(@RequestBody Coordinador coordinador, @PathVariable("id_coordinador") Integer id_coordinador){
         Coordinador coordObj = servicioCoordinador.getCoordinador(id_coordinador);
@@ -66,6 +98,14 @@ public class ControladorCoordinador {
         return ResponseEntity.ok(servicioCoordinador.updateCoordinador(coordinador));
     }
 
+
+    /* !- DELETE Mappings -! */
+
+    /**
+     * 
+     * @param id_coordinador
+     * @return
+     */
     @DeleteMapping("/coordinadores/{id_coordinador}")
     public ResponseEntity<String> deleteCoordinador(@PathVariable("id_coordinador") Integer id_coordinador){
         Coordinador coordObj = servicioCoordinador.getCoordinador(id_coordinador);

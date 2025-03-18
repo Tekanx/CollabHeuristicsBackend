@@ -44,7 +44,7 @@ public class ImplServicioCoordinador implements ServicioCoordinador{
     @Override
     public String deleteCoordinador(Coordinador coordinador) {
         repositorioCoordinador.delete(coordinador);
-        return "Coordinador con ID " + coordinador.getId_coordinador() + " eliminado";
+        return "Coordinador con ID " + coordinador.getId_coordinador() + ": " + coordinador.getNombre_real() + " " + coordinador.getApellido_real() + " eliminado";
     }
 
     @Override
