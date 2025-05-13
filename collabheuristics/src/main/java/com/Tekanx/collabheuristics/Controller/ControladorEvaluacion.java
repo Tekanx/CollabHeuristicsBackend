@@ -1,4 +1,9 @@
 package com.Tekanx.collabheuristics.Controller;
+/**
+ * @author Tekanx
+ * @version 0.2
+ * @since 13/05/2025
+ */
 
 import com.Tekanx.collabheuristics.models.Evaluacion;
 import com.Tekanx.collabheuristics.models.Evaluador;

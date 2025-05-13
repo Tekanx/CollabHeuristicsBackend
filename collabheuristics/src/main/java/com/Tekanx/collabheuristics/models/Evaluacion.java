@@ -1,4 +1,5 @@
-package com.Tekanx.collabheuristics.models;/**
+package com.Tekanx.collabheuristics.models;
+/**
  * @author Tekanx
  * @version 0.2
  * @since 30/04/2025

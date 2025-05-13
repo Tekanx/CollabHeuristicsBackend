@@ -7,7 +7,7 @@ import com.Tekanx.collabheuristics.models.Evaluador;
 
 /**
  * @author Tekanx
- * @version 0.1
+ * @version 0.2
  * @since 11/05/2025
  */
 public interface ServicioEvaluacion {

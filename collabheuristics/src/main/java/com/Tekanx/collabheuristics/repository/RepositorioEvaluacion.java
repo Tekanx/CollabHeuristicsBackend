@@ -2,13 +2,11 @@ package com.Tekanx.collabheuristics.repository;
 
 /**
  * @author Tekanx
- * @version 0.1
- * @since 06/05/2025
+ * @version 0.2
+ * @since 13/05/2025
  */
 import com.Tekanx.collabheuristics.models.Evaluacion;
 import com.Tekanx.collabheuristics.models.Evaluador;
-import com.Tekanx.collabheuristics.models.Heuristica;
-import com.Tekanx.collabheuristics.models.Principio_heuristico;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
