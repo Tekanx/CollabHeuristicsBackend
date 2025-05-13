@@ -1,8 +1,8 @@
 package com.Tekanx.collabheuristics.services.coordinador;
 /**
  * @author Tekanx
- * @version 0.1
- * @since 13/03/2025
+ * @version 0.2 
+ * @since 13/05/2025
  */
 
 import java.util.List;
