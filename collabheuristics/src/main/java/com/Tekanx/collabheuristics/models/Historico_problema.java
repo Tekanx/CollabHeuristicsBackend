@@ -1,5 +1,7 @@
 package com.Tekanx.collabheuristics.models;
+
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -14,8 +16,8 @@ import lombok.Setter;
 
 /**
  * @author Tekanx
- * @version 0.1
- * @since 18/03/2025
+ * @version 0.2
+ * @since 07/05/2025
  */
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 
@@ -36,8 +38,10 @@ public class Historico_problema {
    private Long fk_evaluador;
    @Column(name = "id_coordinador")
    private Long fk_coordinador;
+   @Column(name = "id_problema")
+   private Long fk_problema;
    @Column(name = "fecha_cambio")
-   private Date fecha_cambio;
-   @Column(name = "detalle_cambio")
-   private Date detalle_cambio; 
+   private Timestamp fecha_cambio;
+   @Column(name = "detalle")
+   private String detalle_cambio; 
 }
