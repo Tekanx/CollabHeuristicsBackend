@@ -1,5 +1,11 @@
 package com.Tekanx.collabheuristics.Controller;
 
+/**
+ * @author Tekanx
+ * @version 0.2
+ * @since 13/05/2025
+ */
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.Tekanx.collabheuristics.models.Evaluador;
-import com.Tekanx.collabheuristics.services.ServicioEvaluador;
+import com.Tekanx.collabheuristics.services.evaluador.ServicioEvaluador;
 
 public class ControladorEvaluador {
 
@@ -27,7 +33,7 @@ public class ControladorEvaluador {
     }
 
     @GetMapping("/evaluadores/{id_evaluador}")
-    public ResponseEntity<Evaluador> getEvaluador(@PathVariable("id_evaluador") Integer id_evaluador){
+    public ResponseEntity<Evaluador> getEvaluador(@PathVariable("id_evaluador") Long id_evaluador){
         return ResponseEntity.ok(servicioEvaluador.getEvaluador(id_evaluador));
     }
 
@@ -43,7 +49,7 @@ public class ControladorEvaluador {
     /* !- UPDATE Mappings -! */
 
     @PatchMapping("evaluadores/{id_evaluador}")
-    public ResponseEntity<Evaluador> updateEvaluador(@RequestBody Evaluador evaluador, @PathVariable("id_evaluador") Integer id_evaluador){
+    public ResponseEntity<Evaluador> updateEvaluador(@RequestBody Evaluador evaluador, @PathVariable("id_evaluador") Long id_evaluador){
         Evaluador evalObj = servicioEvaluador.getEvaluador(id_evaluador);
         if(evalObj != null){
             evalObj.setNombre(evaluador.getNombre());
@@ -61,7 +67,7 @@ public class ControladorEvaluador {
     /* !- DELETE Mappings -! */
 
     @DeleteMapping("evaluadores/{id_evaluador}")
-    public ResponseEntity<String> deleteEvaluador(@PathVariable("id_evaluador") Integer id_evaluador){
+    public ResponseEntity<String> deleteEvaluador(@PathVariable("id_evaluador") Long id_evaluador){
         Evaluador evalObj = servicioEvaluador.getEvaluador(id_evaluador);
         String deleteMsg = null;
         if(evalObj != null){
