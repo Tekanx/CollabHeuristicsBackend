@@ -12,7 +12,7 @@ import com.Tekanx.collabheuristics.repository.RepositorioPuntuacion;
 
 /**
  * @author Tekanx
- * @version 0.1
+ * @version 0.2
  * @since 08/05/2025
  */
 

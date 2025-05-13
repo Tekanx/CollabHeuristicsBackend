@@ -6,9 +6,28 @@ import jakarta.persistence.Id;
 /**
  * @author Tekanx
  * @version 0.1
- * @since 18/03/2025
+ * @since 07/05/2025
  */
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "puntuacion_problema")
+@JsonInclude(NON_DEFAULT)
 public class Puntuacion_problema {
    @Id
    @Column(name = "id_puntuacion", unique = true, updatable = false)
