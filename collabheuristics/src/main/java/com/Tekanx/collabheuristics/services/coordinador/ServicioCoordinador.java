@@ -1,4 +1,4 @@
-package com.Tekanx.collabheuristics.services;
+package com.Tekanx.collabheuristics.services.coordinador;
 /**
  * @author Tekanx
  * @version 0.1

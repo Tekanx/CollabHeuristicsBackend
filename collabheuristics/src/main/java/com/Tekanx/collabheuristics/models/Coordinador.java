@@ -1,8 +1,8 @@
 package com.Tekanx.collabheuristics.models;
 /**
  * @author Tekanx
- * @version 0.1
- * @since 13/03/2025
+ * @version 0.2
+ * @since 1/05/2025
 */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -28,12 +28,12 @@ public class Coordinador {
     @Id
     @Column(name = "id_coordinador", unique = true, updatable = false)
     private Integer id_coordinador;
-    @Column(name = "nombre_usuario")
+    @Column(name = "nombre_usuario", unique = true)
     private String nombre_usuario;
-    @Column(name = "nombre_real")
-    private String nombre_real;
-    @Column(name = "apellido_real")
-    private String apellido_real;
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "apellido")
+    private String apellido;
     @Column(name = "numero")
     private Integer numero;
     @Column(name = "correo")

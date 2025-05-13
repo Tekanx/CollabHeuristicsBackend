@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Tekanx.collabheuristics.models.Coordinador;
 import com.Tekanx.collabheuristics.models.Evaluacion;
-import com.Tekanx.collabheuristics.services.ServicioCoordinador;
+import com.Tekanx.collabheuristics.services.coordinador.ServicioCoordinador;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -88,8 +88,8 @@ public class ControladorCoordinador {
     public ResponseEntity<Coordinador> updateCoordinador(@RequestBody Coordinador coordinador, @PathVariable("id_coordinador") Integer id_coordinador){
         Coordinador coordObj = servicioCoordinador.getCoordinador(id_coordinador);
         if (coordObj != null) {
-            coordObj.setNombre_real(coordinador.getNombre_real());
-            coordObj.setApellido_real(coordinador.getApellido_real());
+            coordObj.setNombre(coordinador.getNombre());
+            coordObj.setApellido(coordinador.getApellido());
             coordObj.setCorreo(coordinador.getCorreo());
             coordObj.setNumero(coordinador.getNumero());
             coordObj.setGenero(coordinador.getGenero());
